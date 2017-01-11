@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script src="/js/lib/RegisterController.js"></script>
+</head>
+<body>
+<div ng-app="icluj" ng-controller="RegisterController">
+    <form ng-submit="submit()">
+        <div>
+            <label>username</label>
+            <input type="text" ng-model="username"/>
+        </div>
+        <div>
+            <label>password</label>
+            <input type="password"/>
+        </div>
+        <div>
+            <label>retype password</label>
+            <input type="password"/>
+        </div>
+        <div>
+            <label>nickname</label>
+            <input type="text"/>
+        </div>
+        <div>
+            <label>date of birth</label>
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
