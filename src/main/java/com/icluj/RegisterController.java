@@ -18,16 +18,10 @@ public class RegisterController {
 
     @RequestMapping("/register")
     public String getRegisterPage(){
-        User user = new User();
-        user.setEmail("alex@isdc.eu");
-        user.setNickname("alex");
-        user.setPassword("password");
-//        userDAO.save(user);
-        userService.saveUser(user);
         return "views/register_page.html";
     }
     @RequestMapping(value="/saveUser", method= RequestMethod.POST)
-    public void saveUser(@RequestBody User user){
+    public void saveUser(@RequestBody UserJSON user){
         System.out.println(user.getEmail());
 
     }
