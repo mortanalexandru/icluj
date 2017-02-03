@@ -1,11 +1,24 @@
 package com.icluj;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
 /**
- * Created by g on 25.01.2017.
+ * Created by Alexandru on 31/01/2017.
  */
+@Entity
+@Table(name = "User")
 public class User {
+
+    @Id
+    @NotNull
     private String email;
+
+    @NotNull
     private String password;
+
     private String nickname;
 
     public String getEmail() {
@@ -31,5 +44,4 @@ public class User {
     public void setNickname(String nickname) {
         this.nickname = nickname;
     }
-
 }

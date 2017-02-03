@@ -14,7 +14,6 @@ angular.module("icluj", []).controller("RegisterController", function($scope, $h
                 $scope.showRetypeError=true;
             }
         }
-
     };
     function isRetypePasswordValid(){
         if($scope.user.password == $scope.retypePassword)

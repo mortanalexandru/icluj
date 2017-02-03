@@ -1,0 +1,24 @@
+{
+  "name": "icLUJ",
+  "homepage": "https://github.com/mortanalexandru/icluj",
+  "authors": [
+    "mortanalexandru <mortanalexandru@yahoo.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.1",
+    "angular-animate": "^1.6.1",
+    "angular-touch": "^1.6.1",
+    "bootstrap": "^3.3.7"
+  }
+}
