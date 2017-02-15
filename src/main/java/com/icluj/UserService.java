@@ -13,7 +13,22 @@ public class UserService {
     @Autowired
     private UserDAO userDAO;
 
-    public void saveUser(User user){
+    public void saveUser(UserJSON userJSON){
+        User user = new User();
+        user.setEmail(userJSON.getEmail());
+        user.setPassword(userJSON.getPassword());
+        user.setNickname(userJSON.getNickname());
         userDAO.save(user);
+    }
+    public boolean login(UserJSON userJSON){
+        User userDB=userDAO.findOne(userJSON.getEmail());
+        if(userDB!=null){
+            String passwordDB = userDB.getPassword();
+            String passwordJson = userJSON.getPassword();
+            if(passwordJson.equals(passwordDB)) {
+                return true;
+            }
+        }
+        return false;
     }
 }

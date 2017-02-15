@@ -23,7 +23,7 @@ public class RegisterController {
     @RequestMapping(value="/saveUser", method= RequestMethod.POST)
     public void saveUser(@RequestBody UserJSON user){
         System.out.println(user.getEmail());
-
+        userService.saveUser(user);
     }
 }
 

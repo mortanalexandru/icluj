@@ -1,23 +1,21 @@
 <!doctype html>
-<html ng-app>
+<html>
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
-    <script src="/js/lib/RegisterController.js"></script>
+    <script src="/js/lib/LoginController.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/login.css">
 </head>
-<body>
-<div  ng-controller="RegisterController" class="container-fluid">
-    <form novalidate ng-submit="submit()" class="form-horizontal jumbotron" >
+<body ng-app="icluj">
+<div  ng-controller="LoginController" class="container-fluid">
+    <form name="loginForm" novalidate ng-submit="submit()" class="form-horizontal jumbotron" id="login_form">
         <div class="form-group">
-            <label>nickname</label>
-            <input type="text" class="form-control"ng-model="user.nickname"/>
+            <label>email</label>
+            <input type="email" ng-model="user.email" class="form-control" required/>
         </div>
         <div class="form-group">
             <label>password</label>
-            <input type="password" class="form-control" ng-model="user.password"/>
-        </div>
-        <div class="form-group">
-            <label>retype password</label>
-            <input type="password" class="form-control"/>
+            <input type="password" class="form-control" ng-model="user.password" required/>
         </div>
 
         <div class="form-group">
