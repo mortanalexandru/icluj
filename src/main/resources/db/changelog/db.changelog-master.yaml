@@ -23,3 +23,137 @@ databaseChangeLog:
                   constraints:
                     nullable: false
                     unique: true
+  - changeSet:
+      id: 2
+      author: sergiu
+      changes:
+        - createTable:
+            tableName: location
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: longitude
+                  type: decimal(13, 10)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: latitude
+                  type: decimal(13,10)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: adress
+                  type: varchar(100)
+  - changeSet:
+      id: 3
+      author: sergiu
+      changes:
+        - createTable:
+                    tableName: color
+                    columns:
+                      - column:
+                          name: id
+                          type: int
+                          autoIncrement: true
+                          constraints:
+                            primaryKey: true
+                            nullable: false
+                      - column:
+                          name: color
+                          type: varchar(50)
+                          constraints:
+                            nullable: false
+                      - column:
+                          name: type
+                          type: varchar(100)
+        - createTable:
+            tableName: event
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: varchar(300)
+              - column:
+                  name: location
+                  type: int
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_event_location
+                    references: location(id)
+              - column:
+                  name: iCoins
+                  type: int
+              - column:
+                  name: imageUrl
+                  type: varchar(100)
+              - column:
+                  name: color
+                  type: int
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_event_color
+                    references: color(id)
+  - changeSet:
+      id: 4
+      author: sergiu
+      changes:
+        - addColumn:
+                    tableName: user
+                    columns:
+                      - column:
+                          name: date_of_birth
+                          type: date
+                          constraints:
+                            nullable: false
+                      - column:
+                          name: imageUrl
+                          type: varchar(100)
+                      - column:
+                          name: iCoins
+                          type: int
+  - changeSet:
+      id: 5
+      author: sergiu
+      changes:
+        - createTable:
+                    tableName: user_event
+                    columns:
+                      - column:
+                          name: user
+                          type: varchar(100)
+                          constraints:
+                              primaryKey: true
+                              nullable: false
+                              foreignKeyName: fk_user_event
+                              references: user(email)
+                      - column:
+                          name: event
+                          type: int
+                          constraints:
+                            primaryKey: true
+                            nullable: false
+                            foreignKeyName: fk_event_user
+                            references: event(id)
+
