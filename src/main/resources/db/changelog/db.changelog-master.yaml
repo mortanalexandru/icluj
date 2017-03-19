@@ -138,7 +138,7 @@ databaseChangeLog:
       author: sergiu
       changes:
         - createTable:
-                    tableName: user_event
+                    tableName: User_Event
                     columns:
                       - column:
                           name: user
@@ -157,3 +157,12 @@ databaseChangeLog:
                             foreignKeyName: fk_event_user
                             references: event(id)
 
+  - changeSet:
+      id: 6
+      author: sergiu
+      changes:
+        - renameColumn:
+                    tableName: location
+                    newColumnName: address
+                    oldColumnName: adress
+                    columnDataType: varchar(100)
