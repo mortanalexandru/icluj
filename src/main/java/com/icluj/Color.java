@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
 public class Color {
     @Id
     @NotNull
-    private int id;
+    private Integer id;
 
 
     @NotNull
@@ -23,8 +23,9 @@ public class Color {
     @NotNull
     public String type;
 
-    public int getId(){return id;}
-    public void setId(int id){
+    public Integer
+    getId(){return id;}
+    public void setId(Integer id){
         this.id=id;
     }
     public String getColor(){return color;}

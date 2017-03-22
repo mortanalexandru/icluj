@@ -23,6 +23,7 @@ databaseChangeLog:
                   constraints:
                     nullable: false
                     unique: true
+
   - changeSet:
       id: 2
       author: sergiu
@@ -53,7 +54,7 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
-                  name: adress
+                  name: address
                   type: varchar(100)
   - changeSet:
       id: 3
@@ -157,12 +158,3 @@ databaseChangeLog:
                             foreignKeyName: fk_event_user
                             references: event(id)
 
-  - changeSet:
-      id: 6
-      author: sergiu
-      changes:
-        - renameColumn:
-                    tableName: location
-                    newColumnName: address
-                    oldColumnName: adress
-                    columnDataType: varchar(100)

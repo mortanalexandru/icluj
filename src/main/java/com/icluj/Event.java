@@ -1,8 +1,6 @@
 package com.icluj;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -13,7 +11,7 @@ import javax.validation.constraints.NotNull;
 public class Event {
     @Id
     @NotNull
-    private int id;
+    private Integer id;
 
 
     @NotNull
@@ -25,7 +23,7 @@ public class Event {
 
 
     @NotNull
-    public int location;
+    private Location location;
 
 
     @NotNull
@@ -40,8 +38,8 @@ public class Event {
     public int color;
 
 
-    public int getId(){return id;}
-    public void setId(int id){
+    public Integer getId(){return id;}
+    public void setId(Integer id){
         this.id=id;
     }
     public String getName(){return name;}
@@ -53,8 +51,9 @@ public class Event {
     public void setDescription(String description){
         this.description=description;
     }
-    public int getLocation(){return location;}
-    public void setLocation(int location){
+    @ManyToOne
+    public Location getLocation(){return location;}
+    public void setLocation(Location location){
         this.location=location;
     }
     public int getiCoins(){return  iCoins;}
