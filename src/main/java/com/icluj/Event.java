@@ -23,8 +23,10 @@ public class Event {
 
 
     @NotNull
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "location")
     private Location location;
-
+    
 
     @NotNull
     public int iCoins;
@@ -35,7 +37,9 @@ public class Event {
 
 
     @NotNull
-    public int color;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "color")
+    public Color color;
 
 
     public Integer getId(){return id;}
@@ -51,7 +55,7 @@ public class Event {
     public void setDescription(String description){
         this.description=description;
     }
-    @ManyToOne
+    
     public Location getLocation(){return location;}
     public void setLocation(Location location){
         this.location=location;
@@ -64,8 +68,8 @@ public class Event {
     public void setImageUrl(String imageUrl){
         this.imageUrl=imageUrl;
     }
-    public int getColor(){return color;}
-    public void setColor(int color){
+    public Color getColor(){return color;}
+    public void setColor(Color color){
         this.color=color;
     }
 }

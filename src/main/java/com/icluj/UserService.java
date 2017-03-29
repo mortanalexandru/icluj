@@ -12,9 +12,6 @@ public class UserService {
     @SuppressWarnings("SpringJavaAutowiringInspection")
     @Autowired
     private UserDAO userDAO;
-    @Autowired
-    private EventDAO eventDAO;
-
 
     public void saveUser(UserJSON userJSON){
         User user = new User();
@@ -24,7 +21,6 @@ public class UserService {
         userDAO.save(user);
     }
     public boolean login(UserJSON userJSON){
-        Event eventDB=eventDAO.findOne(1);
         User userDB=userDAO.findOne(userJSON.getEmail());
         if(userDB!=null){
             String passwordDB = userDB.getPassword();
