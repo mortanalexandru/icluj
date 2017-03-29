@@ -24,5 +24,20 @@ angular.module("icluj", ['ngMap']).controller("HomeController", function($scope,
     };
     
     getLocation();
+    
+    
+    var getEvents = function(){
+    	$http({
+            method : "GET",
+            url : "/getEvents"
+        }).then(function mySucces(response) {
+                if(response.data){
+                    $scope.events = response.data;
+                };
+        });
+    	
+    };
+    
+    getEvents();
 
 });

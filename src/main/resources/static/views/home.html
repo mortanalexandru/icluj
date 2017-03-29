@@ -10,6 +10,8 @@
 <div ng-controller="HomeController" >
 	<ng-map center="{{'['+latitude + ', ' + longitude + ']'}}">
 		<!--  --><marker position="{{'['+latitude + ', ' + longitude + ']'}}" ng-if="longitude"></marker>
+		<marker position="{{'['+event.location.latitude + ', ' + event.location.longitude + ']'}}" ng-repeat="event in events"></marker>
+		
 	</ng-map>
 </div>
 </body>
