@@ -31,4 +31,12 @@ public class EventService {
 		eventJSON.setColor(event.getColor().getColor());
 		return eventJSON;
 	}
+	
+	
+	
+	public EventJSON getEvent(Integer id){
+		Event event = eventDAO.findOne(id);
+		EventJSON eventJSON=adaptEvent(event);
+		return eventJSON;
+	}
 }

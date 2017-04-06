@@ -13,6 +13,8 @@ public class HomeController {
         public String greeting() {
             return "views/home.html";
         }
+        
+        
 
 }
 
