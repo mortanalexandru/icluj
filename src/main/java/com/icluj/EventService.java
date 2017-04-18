@@ -2,6 +2,7 @@ package com.icluj;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,4 +40,21 @@ public class EventService {
 		EventJSON eventJSON=adaptEvent(event);
 		return eventJSON;
 	}
+	
+	public EventJSON getEventForUser(Integer id, String email){
+		Event event = eventDAO.findOne(id);
+		EventJSON eventJSON=adaptEvent(event);
+		boolean attendance=isUserInSet(event.getUsers(), email);
+		eventJSON.setAttended(attendance);
+		return eventJSON;
+	}
+	
+	private boolean isUserInSet(Set<User> users, String email){
+    	for(User user:users){
+    		if(user.getEmail().equals(email))
+    			return true;
+    	}
+    	return false;
+    	
+    }
 }

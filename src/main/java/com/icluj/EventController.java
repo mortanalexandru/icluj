@@ -1,7 +1,7 @@
 package com.icluj;
 
-import java.security.Principal;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,10 +19,15 @@ public class EventController {
        return eventService.getEvents();
     }
     
+    
     @RequestMapping("/getEvent")
     public EventJSON getEvent(@RequestParam(name="id") Integer id){
-    	return eventService.getEvent(id);
+    	EventJSON eventJSON=eventService.getEventForUser(id, "sergiu@yahoo.com");
+		return eventJSON;
     }
-
+    
+    
+    
+    
 }
 

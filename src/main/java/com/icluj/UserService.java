@@ -31,4 +31,7 @@ public class UserService {
         }
         return false;
     }
+    public User getUser( String email ){
+    	return userDAO.findOne(email);
+    }
 }

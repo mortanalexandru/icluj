@@ -1,5 +1,7 @@
 package com.icluj;
 
+import java.util.Set;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
@@ -20,6 +22,9 @@ public class Event {
 
     @NotNull
     public String description;
+    
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "events")
+    private Set<User> users;
 
 
     @NotNull
@@ -72,4 +77,11 @@ public class Event {
     public void setColor(Color color){
         this.color=color;
     }
+	public Set<User> getUsers() {
+		return users;
+	}
+	public void setUsers(Set<User> users) {
+		this.users = users;
+	}
+    
 }
