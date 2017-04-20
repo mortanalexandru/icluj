@@ -26,4 +26,14 @@ angular.module("icluj", []).controller("EventController", function($scope, $wind
 	    };
 	    var id = getUrlParam($window.location.href, "id");
 	    getEvent(id);
+	    
+	    $scope.claim=function(){
+	    	$http({
+	    		data:id,
+	    		url:"/claimEvent",
+	    		method:"POST"
+	    	}).then(function mySucces(response){
+	    		$scope.event.attended=response.data;
+	    	});
+	    }
 });

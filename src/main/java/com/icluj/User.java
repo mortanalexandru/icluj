@@ -29,6 +29,8 @@ public class User {
     private String password;
 
     private String nickname;
+    
+    private int iCoins;
    
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinTable(name = "user_event", joinColumns = {
@@ -68,5 +70,13 @@ public class User {
 
 	public void setEvents(Set<Event> events) {
 		this.events = events;
+	}
+
+	public int getiCoins() {
+		return iCoins;
+	}
+
+	public void setiCoins(int iCoins) {
+		this.iCoins = iCoins;
 	}
 }

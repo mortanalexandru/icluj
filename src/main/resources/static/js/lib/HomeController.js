@@ -1,7 +1,7 @@
 /**
  * Created by g on 01.03.2017.
  */
-angular.module("icluj", ['ngMap']).controller("HomeController", function($scope, $http, NgMap){
+angular.module("icluj", ['ngMap']).controller("HomeController", function($scope, $http,$window, NgMap){
 
     $scope.longitude = 23.590957;
     $scope.latitude = 46.769457;
@@ -37,7 +37,10 @@ angular.module("icluj", ['ngMap']).controller("HomeController", function($scope,
         });
     	
     };
-    
     getEvents();
+    
+    $scope.openEvent=function(id){
+    	$window.location.href="/event?id="+id;
+    }
 
 });

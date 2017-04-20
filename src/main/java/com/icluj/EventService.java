@@ -30,6 +30,7 @@ public class EventService {
 		eventJSON.setiCoins(event.getiCoins());
 		eventJSON.setImageUrl(event.getImageUrl());
 		eventJSON.setColor(event.getColor().getColor());
+		eventJSON.setId(event.getId());
 		return eventJSON;
 	}
 	

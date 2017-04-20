@@ -8,6 +8,7 @@ public class EventJSON {
 	private String imageUrl;
 	private String color;
 	private boolean attended;
+	private int id;
 	
 	public String getName() {
 		return name;
@@ -50,6 +51,12 @@ public class EventJSON {
 	}
 	public void setAttended(boolean attended) {
 		this.attended = attended;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	

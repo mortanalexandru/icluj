@@ -1,6 +1,7 @@
 package com.icluj;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 /**
@@ -12,6 +13,8 @@ public class UserService {
     @SuppressWarnings("SpringJavaAutowiringInspection")
     @Autowired
     private UserDAO userDAO;
+    @Autowired
+    private EventDAO eventDAO;
 
     public void saveUser(UserJSON userJSON){
         User user = new User();
@@ -33,5 +36,14 @@ public class UserService {
     }
     public User getUser( String email ){
     	return userDAO.findOne(email);
+    }
+    public boolean claimEvent(String email, Integer eventId){
+    	User user=getUser(email);
+    	Event event=eventDAO.findOne(eventId);
+    	user.getEvents().add(event);
+    	user.setiCoins(event.getiCoins()+user.getiCoins());
+    	userDAO.save(user);
+		return true;
+    	
     }
 }
