@@ -1,4 +1,6 @@
-package com.icluj;
+package com.icluj.json;
+
+import com.icluj.models.Location;
 
 public class EventJSON {
 	private String name;

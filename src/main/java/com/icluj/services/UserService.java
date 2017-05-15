@@ -1,8 +1,14 @@
-package com.icluj;
+package com.icluj.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
+
+import com.icluj.json.UserJSON;
+import com.icluj.models.Event;
+import com.icluj.models.User;
+import com.icluj.repositories.EventDAO;
+import com.icluj.repositories.UserDAO;
 
 /**
  * Created by Alexandru on 31/01/2017.

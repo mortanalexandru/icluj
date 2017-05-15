@@ -1,4 +1,4 @@
-package com.icluj;
+package com.icluj.json;
 
 /**
  * Created by Alexandru on 03/02/2017.

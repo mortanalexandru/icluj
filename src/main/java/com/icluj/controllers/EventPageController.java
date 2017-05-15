@@ -1,4 +1,4 @@
-package com.icluj;
+package com.icluj.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class EventPageController {
 	@RequestMapping("/event")
 	public String getEventPage(){
-		return "views/event.html";
+		return "event";
 	}
 		
 

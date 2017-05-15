@@ -1,4 +1,4 @@
-package com.icluj;
+package com.icluj.models;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

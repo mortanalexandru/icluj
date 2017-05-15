@@ -1,4 +1,4 @@
-package com.icluj;
+package com.icluj.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +11,7 @@ public class HomeController {
 
         @RequestMapping("/")
         public String greeting() {
-            return "views/home.html";
+            return "home";
         }
         
         

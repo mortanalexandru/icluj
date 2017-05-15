@@ -1,4 +1,4 @@
-package com.icluj;
+package com.icluj.controllers;
 
 
 
@@ -11,5 +11,5 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class ProfilePageController {
     @RequestMapping("/profile")
-    public String getProfilePage(){return "views/profile_page.html";}
+    public String getProfilePage(){return "profile_page";}
 }
