@@ -27,6 +27,7 @@ public class UserService {
         user.setEmail(userJSON.getEmail());
         user.setPassword(userJSON.getPassword());
         user.setNickname(userJSON.getNickname());
+        user.setImageUrl(userJSON.getImage());
         userDAO.save(user);
     }
     public boolean login(UserJSON userJSON){

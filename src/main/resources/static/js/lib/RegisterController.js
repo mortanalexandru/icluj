@@ -1,7 +1,7 @@
 /**
  * Created by g on 11.01.2017.
  */
-angular.module("icluj", []).controller("RegisterController", function($scope, $http){
+angular.module("icluj", ['file-model']).controller("RegisterController", function($scope, $http){
     $scope.user = {};
     $scope.submit = function(){
         console.log($scope.user);
@@ -22,6 +22,7 @@ angular.module("icluj", []).controller("RegisterController", function($scope, $h
             return false;
     }
     function saveUser(){
+    	$scope.user.image=$scope.image.name;
         $http({
             method : "POST",
             url : "/saveUser",
@@ -31,6 +32,20 @@ angular.module("icluj", []).controller("RegisterController", function($scope, $h
         }, function myError(response) {
             $scope.myWelcome = response.statusText;
         });
+    	uploadImage($scope.image);
     }
+    
+    function uploadImage(file){
+        $http({
+            method : "POST",
+            url : "/file",
+            data:  {"file":file}
+        }).then(function mySucces(response) {
+            $scope.myWelcome = response.data;
+        }, function myError(response) {
+            $scope.myWelcome = response.statusText;
+        });
+    }
+    
 
 });

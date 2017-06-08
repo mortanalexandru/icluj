@@ -1,7 +1,11 @@
 #register_form{
     margin-top: 50px;
+    background-color: #4b0082;
+    color:black;
 }
 #register_form .form-group{
     margin-left: 15px;
     margin-right: 15px;
+    height:65px;
+    weidth:100%;
 }

@@ -31,6 +31,8 @@ public class User {
     private String nickname;
     
     private int iCoins;
+    
+    private String imageUrl;
    
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinTable(name = "user_event", joinColumns = {
@@ -78,5 +80,13 @@ public class User {
 
 	public void setiCoins(int iCoins) {
 		this.iCoins = iCoins;
+	}
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
 	}
 }
