@@ -36,15 +36,14 @@ angular.module("icluj", ['file-model']).controller("RegisterController", functio
     }
     
     function uploadImage(file){
-        $http({
-            method : "POST",
-            url : "/file",
-            data:  {"file":file}
-        }).then(function mySucces(response) {
-            $scope.myWelcome = response.data;
-        }, function myError(response) {
-            $scope.myWelcome = response.statusText;
-        });
+        var fd = new FormData();
+        fd.append('file', file);
+        $http.post("/file", fd, {
+            transformRequest: angular.identity,
+            headers: {'Content-Type': undefined}
+        }).then(function(){
+        	window.location.href = "/login";
+        })
     }
     
 

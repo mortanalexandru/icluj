@@ -1,5 +1,6 @@
 package com.icluj.models;
 
+import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -33,6 +34,8 @@ public class User {
     private int iCoins;
     
     private String imageUrl;
+    
+    private Date date_of_birth;
    
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinTable(name = "user_event", joinColumns = {
@@ -88,5 +91,13 @@ public class User {
 
 	public void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
+	}
+
+	public Date getDate_of_birth() {
+		return date_of_birth;
+	}
+
+	public void setDate_of_birth(Date date_of_birth) {
+		this.date_of_birth = date_of_birth;
 	}
 }

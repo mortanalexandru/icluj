@@ -11,7 +11,7 @@ public class HomeController {
 
         @RequestMapping("/")
         public String greeting() {
-            return "home";
+            return "default";
         }
         
         

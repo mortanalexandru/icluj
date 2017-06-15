@@ -9,6 +9,7 @@ public class UserJSON {
     private String password;
     private String nickname;
     private String image;
+    private DateJSON dob;
 
     public String getEmail() {
         return email;
@@ -40,5 +41,13 @@ public class UserJSON {
 
 	public void setImage(String image) {
 		this.image = image;
+	}
+
+	public DateJSON getDob() {
+		return dob;
+	}
+
+	public void setDob(DateJSON dob) {
+		this.dob = dob;
 	}
 }

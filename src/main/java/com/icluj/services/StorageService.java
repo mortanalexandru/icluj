@@ -15,9 +15,9 @@ public class StorageService {
 	private String path;
 
 	public void store(MultipartFile file) {
-		Path rootLocation = Paths.get(path);
+		Path rootLocation = Paths.get(path+"/"+file.getOriginalFilename());
         try {
-            Files.copy(file.getInputStream(), rootLocation.resolve(file.getOriginalFilename()));
+            Files.copy(file.getInputStream(), rootLocation);
         } catch (IOException e) {
            e.printStackTrace();
         }

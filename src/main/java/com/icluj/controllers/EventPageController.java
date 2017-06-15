@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class EventPageController {
 	@RequestMapping("/event")
 	public String getEventPage(){
-		return "event";
+		return "event_page";
 	}
 		
 

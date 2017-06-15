@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.icluj.json.UserJSON;
 import com.icluj.services.UserService;
@@ -21,12 +22,12 @@ public class RegisterController {
 
     @RequestMapping("/register")
     public String getRegisterPage(){
-        return "register_page";
+        return "register";
     }
     @RequestMapping(value="/saveUser", method= RequestMethod.POST)
+    @ResponseBody
     public void saveUser(@RequestBody UserJSON user){
-        System.out.println(user.getEmail());
-        //userService.saveUser(user);
+        userService.saveUser(user);
     }
 }
 

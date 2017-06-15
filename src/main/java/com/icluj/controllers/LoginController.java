@@ -19,7 +19,7 @@ public class LoginController {
     private UserService userService;
     @RequestMapping("/login")
     public String getLogin(){
-        return "login_page";
+        return "login";
 
     }
 

@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+<script src="/js/lib/LoginController.js"></script>
+
+<link rel="stylesheet" href="/css/loginPage.css" />
+</head>
+<body ng-app="icluj">
+	<div ng-controller="LoginController"  class="login-page">
+		<div class="form">
+			<form class="login-form" action="contact"  method="post" th:action="@{/login}" id="login_form">
+				<input placeholder="username" type="email" ng-model="user.email" class="form-control" name="username" th:required="required" /> <input type="password"
+					placeholder="password" class="form-control" name="password" ng-model="user.password" th:required="required"/>
+				<button>login</button>
+				<p class="message">
+					Not registered? <a href="/register">Create an account</a>
+				</p>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
